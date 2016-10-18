@@ -8,6 +8,8 @@ Width = 800
 
 window = pygame.display.set_mode((Width, Height), 0, 24)
 pygame.display.set_caption('Meme Generator')
+window.blit((Meme.jpg),(0,0))
+
 
 
 
