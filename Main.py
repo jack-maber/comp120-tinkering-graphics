@@ -3,8 +3,8 @@ from pygame.locals import *
 
 pygame.init()
 img = pygame.image.load('Meme.jpg')
-Height = 800
-Width = 800
+Height =600
+Width =600
 
 window = pygame.display.set_mode((Width, Height), 0, 24)
 pygame.display.set_caption('Meme Generator')
