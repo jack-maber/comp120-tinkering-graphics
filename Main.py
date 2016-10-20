@@ -2,7 +2,7 @@ import pygame, sys, time
 from pygame.locals import *
 
 pygame.init()
-img = pygame.image.load('Meme.jpg')
+img = pygame.image.load('BigSmoke.jpg')
 Height =600
 Width =600
 
