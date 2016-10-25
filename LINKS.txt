@@ -1,0 +1,2 @@
+Multiple images:http://stackoverflow.com/questions/33333235/pygame-how-to-change-an-image-blit-over-previous-one
+Draw text:http://stackoverflow.com/questions/10077644/python-display-text-w-font-color

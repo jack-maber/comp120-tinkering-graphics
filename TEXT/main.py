@@ -29,7 +29,6 @@ while True:
             pygame.quit()
             sys.exit()
 
-    windowSurface.fill(BLACK)
     pygame.draw.rect(windowSurface, RED, hello_world_container)
     windowSurface.blit(text, hello_world_container)
     pygame.draw.circle(windowSurface, BLUE, (250, 250), 20, 0)
