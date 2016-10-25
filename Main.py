@@ -1,4 +1,4 @@
-import pygame, sys, time
+import pygame, sys, time, math
 from pygame.locals import *
 
 pygame.init()
@@ -11,12 +11,12 @@ window = pygame.display.set_mode((Width, Height), 0, 24) #Creates window
 pygame.display.set_caption('Meme Generator') #Sets caption for game window
 window.blit(img,(0,0)) #Blits image to created window
 
-
-
-
-label = myfont.render("CJ?", 18, (255,255,255))
+label = myfont.render("CJ?", 18, (0,0,0))
 text_rect = label.get_rect(center=(Width/2, 550))
 window.blit(label, text_rect)
+
+##def blackwhite():
+
 
 
 while True:
