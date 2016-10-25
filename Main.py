@@ -17,7 +17,7 @@ text_rect = label.get_rect(center=(Width/2, 550)) #Automatically Centers Text
 window.blit(label, text_rect) #blits text to window
 pxarray = pygame.PixelArray(window) #Creates a pixel array on the existing image
 
-def blackwhite():
+def greyscale():
     for Y in xrange(Height):
         for X in xrange(Width):
             Red = window.get_at((X, Y)).r
@@ -41,6 +41,21 @@ def thedevil():
             if Red > 25 and Green > 25 and Blue > 25:
                 pxarray[X, Y] = (255, spook, spook)
 
+def sepiatone():
+    for Y in xrange(Height): #greyscales image
+        for X in xrange(Width):
+            Red = window.get_at((X, Y)).r
+            Green = window.get_at((X, Y)).g
+            Blue = window.get_at((X, Y)).b
+
+            grey = (Red + Green + Blue)/3
+
+            pxarray[X, Y] = (grey, grey, grey)
+
+
+
+
+
 
 
 while True:
@@ -49,7 +64,7 @@ while True:
             pygame.quit()
             sys.exit()
         if event.type == KEYDOWN and event.key == K_g:
-            blackwhite()
+            greyscale()
         if event.type == KEYDOWN and event.key == K_h:
             thedevil()
     pygame.display.update()
