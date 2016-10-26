@@ -1,20 +1,36 @@
-import pygame, sys, time, math
+import pygame, sys, time, math, random
 from pygame.locals import *
 
-pygame.init()
-img = pygame.image.load('BigSmoke.jpg')  #Imports background image
+pygame.init()#Initiates Pygame
+img1 = pygame.image.load('BigSmoke.jpg')  #Imports BigSmoke
+img2 = pygame.image.load('Harambe.jpg')   #Imports Harambe
+img3 = pygame.image.load('Doge.jpg')      #Imports Doge
+img4 = pygame.image.load('YeaBoi.jpg')    #Imports Boi
 myfont = pygame.font.SysFont("comic", 100) #Imports text font
-Height =600 #Sets dimensions of window
-Width =600
+Height =800 #Sets dimensions of window
+Width =800
+
+imagelist = [img1, img2, img3, img4] #Picks random from loaded images
+imagelistRan = (random.choice(imagelist))
 
 window = pygame.display.set_mode((Width, Height), 0, 24) #Creates window
 pygame.display.set_caption('Meme Generator') #Sets caption for game window
-window.blit(img,(0,0)) #Blits image to created window
+window.blit(imagelistRan,(0,0)) #Blits image to created window
 
+textlist = ["CJ?","Are you OK?","Excuse me Young Man!"]
+textlist1 = ["Ohhhhhhhhhh","Big Smoke, It's me!" ]#Picks random text snippet from list
+textlistRan = (random.choice(textlist))
+textlistRan1 =(random.choice(textlist1))
 
-label = myfont.render("CJ?", 18, (0,0,0)) #Defines Bottom Text
-text_rect = label.get_rect(center=(Width/2, 550)) #Automatically Centers Text
+label = myfont.render(textlistRan, 18, (255,255,255)) #Defines Top Text
+text_rect = label.get_rect(center=(Width/2, 50)) #Automatically Centers Text
 window.blit(label, text_rect) #blits text to window
+
+
+label = myfont.render(textlistRan1, 18, (255,255,255)) #Defines Bottom Text
+text_rect = label.get_rect(center=(Width/2, 750)) #Automatically Centers Text
+window.blit(label, text_rect) #blits text to window
+
 pxarray = pygame.PixelArray(window) #Creates a pixel array on the existing image
 
 def greyscale():
@@ -28,8 +44,6 @@ def greyscale():
 
             pxarray[X, Y] = (grey, grey, grey)
 
-
-
 def thedevil():
     for Y in xrange(Height):
         for X in xrange(Width):
@@ -41,19 +55,13 @@ def thedevil():
             if Red > 25 and Green > 25 and Blue > 25:
                 pxarray[X, Y] = (255, spook, spook)
 
-def sepiatone():
-    for Y in xrange(Height): #greyscales image
+def invert(window):
+    for Y in xrange(Height):
         for X in xrange(Width):
             Red = window.get_at((X, Y)).r
             Green = window.get_at((X, Y)).g
             Blue = window.get_at((X, Y)).b
-
-            grey = (Red + Green + Blue)/3
-
-            pxarray[X, Y] = (grey, grey, grey)
-
-
-
+            pxarray[X, Y] = (255 - Red, 255 - Green, 255 - Blue)
 
 
 
@@ -67,4 +75,8 @@ while True:
             greyscale()
         if event.type == KEYDOWN and event.key == K_h:
             thedevil()
+        if event.type == KEYDOWN and event.key == K_j:
+            invert(window)
+
+
     pygame.display.update()
