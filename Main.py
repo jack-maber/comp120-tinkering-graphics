@@ -81,7 +81,7 @@ while True:
         if event.type == KEYDOWN and event.key == K_k:
             nightvision(window)
 
-    del pxarray
+    del pxarray #Deletes PixelArray so that the text is not affected
 
     label = myfont.render(textlistRan, 18, (255, 255, 255))  # Defines Top Text
     text_rect = label.get_rect(center=(Width / 2, 50))  # Automatically Centers Text
