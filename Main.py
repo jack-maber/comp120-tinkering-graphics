@@ -20,7 +20,7 @@ pygame.display.set_caption('Meme Generator 3000') #Sets caption for game window
 window.blit(imagelistRan,(0,0)) #Blits image to created window
 
 textlist = ["CJ?","Are you OK?","Excuse me Young Man!"]
-textlist1 = ["Ohhhhhhhhhh","Big Smoke, It's me!","Boiiiiiiiiiiiiiiiiiiiiiiiii", "It was me, Dio!", "JAGUARS" ]#Picks random text snippet from list
+textlist1 = ["Ohhhhhhhhhh","Big Smoke, It's me!","Boiiiiiiiiiiiiiiiiiiiiiiiii", "It was me, Dio!", "JAGUARS","BOTTOM TEXT"]#Picks random text snippet from list
 textlistRan = (random.choice(textlist))
 textlistRan1 =(random.choice(textlist1))
 
