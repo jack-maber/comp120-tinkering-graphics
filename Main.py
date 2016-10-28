@@ -16,7 +16,7 @@ imagelist = [img1, img2, img3, img4,img5, img6] #Picks random from loaded images
 imagelistRan = (random.choice(imagelist))
 
 window = pygame.display.set_mode((Width, Height), 0, 24) #Creates window
-pygame.display.set_caption('Meme Generator') #Sets caption for game window
+pygame.display.set_caption('Meme Generator 3000') #Sets caption for game window
 window.blit(imagelistRan,(0,0)) #Blits image to created window
 
 textlist = ["CJ?","Are you OK?","Excuse me Young Man!"]
