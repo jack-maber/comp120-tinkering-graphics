@@ -12,12 +12,6 @@ myfont = pygame.font.SysFont("comic", 100) #Imports text font
 Height =800 #Sets dimensions of window
 Width =800
 
-White = (255, 255, 255)
-Black = (0, 0, 0)
-Red = (255, 0, 0)
-Green = (0, 255, 0)
-Blue = (0, 0, 255)
-
 imagelist = [img1, img2, img3, img4,img5, img6] #Picks random from loaded images
 imagelistRan = (random.choice(imagelist))
 
