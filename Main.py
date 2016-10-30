@@ -1,7 +1,7 @@
 import pygame, sys, time, math, random
 from pygame.locals import *
 
-pygame.init()#Initiates Pygame
+pygame.init()  #  Initiates Pygame
 img1 = pygame.image.load('BigSmoke.jpg')  #Imports BigSmoke
 img2 = pygame.image.load('Harambe.jpg')   #Imports Harambe
 img3 = pygame.image.load('Doge.jpg')      #Imports Doge
@@ -15,7 +15,7 @@ WIDTH =800
 imagelist = [img1, img2, img3, img4,img5, img6] #Picks random from loaded images
 imagelistRan = (random.choice(imagelist))
 
-window = pygame.display.set_mode((WIDTH, HEIGHT), 0, 24) #Creates window
+window = pygame.display.set_mode((WIDTH, HEIGHT)) #Creates window
 pygame.display.set_caption('Meme Generator 3000') #Sets caption for game window
 window.blit(imagelistRan,(0,0)) #Blits image to created window
 
