@@ -9,13 +9,13 @@ img4 = pygame.image.load('YeaBoi.jpg')    #Imports Boi
 img5 = pygame.image.load('Dio.jpg')       #Imports Dio
 img6 = pygame.image.load('Jaguars.jpg')   #Imports Jaguars
 myfont = pygame.font.SysFont("comic", 100) #Imports text font
-Height =800 #Sets dimensions of window
-Width =800
+HEIGHT =800 #Sets dimensions of window
+WIDTH =800
 
 imagelist = [img1, img2, img3, img4,img5, img6] #Picks random from loaded images
 imagelistRan = (random.choice(imagelist))
 
-window = pygame.display.set_mode((Width, Height), 0, 24) #Creates window
+window = pygame.display.set_mode((WIDTH, HEIGHT), 0, 24) #Creates window
 pygame.display.set_caption('Meme Generator 3000') #Sets caption for game window
 window.blit(imagelistRan,(0,0)) #Blits image to created window
 
@@ -25,8 +25,8 @@ textlistRan = (random.choice(textlist))
 textlistRan1 =(random.choice(textlist1))
 
 def greyscale():
-    for Y in xrange(Height):
-        for X in xrange(Width):
+    for Y in xrange(HEIGHT):
+        for X in xrange(WIDTH):
             Red = window.get_at((X, Y)).r
             Green = window.get_at((X, Y)).g
             Blue = window.get_at((X, Y)).b
@@ -36,8 +36,8 @@ def greyscale():
             pxarray[X, Y] = (grey, grey, grey)
 
 def thedevil():
-    for Y in xrange(Height):
-        for X in xrange(Width):
+    for Y in xrange(HEIGHT):
+        for X in xrange(WIDTH):
             Red = window.get_at((X, Y)).r
             Green = window.get_at((X, Y)).g
             Blue = window.get_at((X, Y)).b
@@ -47,8 +47,8 @@ def thedevil():
                 pxarray[X, Y] = (255, spook, spook)
 
 def invert(window):
-    for Y in xrange(Height):
-        for X in xrange(Width):
+    for Y in xrange(HEIGHT):
+        for X in xrange(WIDTH):
             Red = window.get_at((X, Y)).r
             Green = window.get_at((X, Y)).g
             Blue = window.get_at((X, Y)).b
@@ -56,8 +56,8 @@ def invert(window):
 
 
 def nightvision(window):
-    for Y in xrange(Height):
-        for X in xrange(Width):
+    for Y in xrange(HEIGHT):
+        for X in xrange(WIDTH):
             Red = window.get_at((X, Y)).r
             Green = window.get_at((X, Y)).g
             Blue = window.get_at((X, Y)).b
@@ -84,11 +84,11 @@ while True:
     del pxarray #Deletes PixelArray so that the text is not affected
 
     label = myfont.render(textlistRan, 18, (255, 255, 255))  # Defines Top Text
-    text_rect = label.get_rect(center=(Width / 2, 50))  # Automatically Centers Text
+    text_rect = label.get_rect(center=(WIDTH / 2, 50))  # Automatically Centers Text
     window.blit(label, text_rect)  # blits text to window
 
     label = myfont.render(textlistRan1, 18, (255, 255, 255))  # Defines Bottom Text
-    text_rect = label.get_rect(center=(Width / 2, 750))  # Automatically Centers Text
+    text_rect = label.get_rect(center=(WIDTH / 2, 750))  # Automatically Centers Text
     window.blit(label, text_rect)  # blits text to window
 
     pygame.display.update()
