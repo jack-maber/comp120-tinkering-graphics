@@ -25,43 +25,43 @@ textlistRan = (random.choice(textlist))
 textlistRan1 =(random.choice(textlist1))
 
 def greyscale():
-    for Y in xrange(HEIGHT):
-        for X in xrange(WIDTH):
-            Red = window.get_at((X, Y)).r
-            Green = window.get_at((X, Y)).g
-            Blue = window.get_at((X, Y)).b
+    for y in xrange(HEIGHT):
+        for x in xrange(WIDTH):
+            Red = window.get_at((x, y)).r
+            Green = window.get_at((x, y)).g
+            Blue = window.get_at((x, y)).b
 
             grey = (Red + Green + Blue)/3
 
-            pxarray[X, Y] = (grey, grey, grey)
+            pxarray[x, y] = (grey, grey, grey)
 
 def thedevil():
-    for Y in xrange(HEIGHT):
-        for X in xrange(WIDTH):
-            Red = window.get_at((X, Y)).r
-            Green = window.get_at((X, Y)).g
-            Blue = window.get_at((X, Y)).b
+    for y in xrange(HEIGHT):
+        for x in xrange(WIDTH):
+            Red = window.get_at((x, y)).r
+            Green = window.get_at((x, y)).g
+            Blue = window.get_at((x, y)).b
 
             spook = (Red + Green + Blue)/4
             if Red > 25 and Green > 25 and Blue > 25:
-                pxarray[X, Y] = (255, spook, spook)
+                pxarray[x, y] = (255, spook, spook)
 
 def invert(window):
-    for Y in xrange(HEIGHT):
-        for X in xrange(WIDTH):
-            Red = window.get_at((X, Y)).r
-            Green = window.get_at((X, Y)).g
-            Blue = window.get_at((X, Y)).b
-            pxarray[X, Y] = (255 - Red, 255 - Green, 255 - Blue)
+    for y in xrange(HEIGHT):
+        for x in xrange(WIDTH):
+            Red = window.get_at((x, y)).r
+            Green = window.get_at((x, y)).g
+            Blue = window.get_at((x, y)).b
+            pxarray[x, y] = (255 - Red, 255 - Green, 255 - Blue)
 
 
 def nightvision(window):
-    for Y in xrange(HEIGHT):
-        for X in xrange(WIDTH):
-            Red = window.get_at((X, Y)).r
-            Green = window.get_at((X, Y)).g
-            Blue = window.get_at((X, Y)).b
-            pxarray[X, Y] = (255 - Red, Green, 255 - Blue)
+    for y in xrange(HEIGHT):
+        for x in xrange(WIDTH):
+            Red = window.get_at((x, y)).r
+            Green = window.get_at((x, y)).g
+            Blue = window.get_at((x, y)).b
+            pxarray[x, y] = (255 - Red, Green, 255 - Blue)
 
 
 while True:
