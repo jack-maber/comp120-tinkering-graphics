@@ -70,6 +70,14 @@ def ganggreen(window):
             Blue = window.get_at((X, Y)).b
             pxarray[X, Y] = (Red,255 - Green, Blue)
 
+def bluebell(window):
+    for Y in xrange(Height):
+        for X in xrange(Width):
+            Red = window.get_at((X, Y)).r
+            Green = window.get_at((X, Y)).g
+            Blue = window.get_at((X, Y)).b
+            pxarray[X, Y] = (Red, Green, 255 - Blue)
+
 while True:
 
     pxarray = pygame.PixelArray(window)  # Creates a pixel array on the existing image
@@ -88,6 +96,8 @@ while True:
             nightvision(window)
         if event.type == KEYDOWN and event.key == K_f:
             ganggreen(window)
+        if event.type == KEYDOWN and event.key == K_b:
+            bluebell(window)
 
     del pxarray #Deletes PixelArray so that the text is not affected
 
