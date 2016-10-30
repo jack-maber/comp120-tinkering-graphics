@@ -35,7 +35,7 @@ def greyscale():
 
             pxarray[x, y] = (grey, grey, grey)
 
-def thedevil():
+def redblack():
     for y in xrange(HEIGHT):
         for x in xrange(WIDTH):
             Red = window.get_at((x, y)).r
@@ -75,7 +75,7 @@ while True:
         if event.type == KEYDOWN and event.key == K_g:
             greyscale()
         if event.type == KEYDOWN and event.key == K_h:
-            thedevil()
+            redblack()
         if event.type == KEYDOWN and event.key == K_j:
             invert(window)
         if event.type == KEYDOWN and event.key == K_k:
