@@ -17,10 +17,10 @@ imagelistRan = (random.choice(imagelist))
 
 window = pygame.display.set_mode((WIDTH, HEIGHT)) #Creates window
 pygame.display.set_caption('Meme Generator 3000') #Sets caption for game window
-window.blit(imagelistRan,(0,0)) #Blits image to created window
+window.blit(imagelistRan,(0, 0)) #Blits image to created window
 
-textlist = ["CJ?","Are you OK?","Excuse me Young Man!","FACE TEXT"]
-textlist1 = ["Ohhhhhhhhhh","Big Smoke, It's me!","Boiiiiiiiiiiiiiiiiiiiiiiiii","It was me, Dio!","JAGUARS","BUTT TEXT"]#Picks random text snippet from list
+textlist = ["CJ?","Are you OK?","Excuse me Young Man!","WHEN YOU MEME"]
+textlist1 = ["Ohhhhhhhhhh","Big Smoke, It's me!","Boiiiiiiiiiiiiiiiiiiiiiiiii","It was me, Dio!","JAGUARS","BOTTOM TEXT"]#Picks random text snippet from list
 textlistRan = (random.choice(textlist))
 textlistRan1 =(random.choice(textlist1))
 
@@ -63,20 +63,24 @@ def nightvision(window):
             pxarray[x, y] = (255 - Red, Green, 255 - Blue)
 
 def ganggreen(window):
-    for Y in xrange(Height):
-        for X in xrange(Width):
-            Red = window.get_at((X, Y)).r
-            Green = window.get_at((X, Y)).g
-            Blue = window.get_at((X, Y)).b
-            pxarray[X, Y] = (Red,255 - Green, Blue)
+    for y in xrange(HEIGHT):
+        for x in xrange(WIDTH):
+            Red = window.get_at((x, y)).r
+            Green = window.get_at((x, y)).g
+            Blue = window.get_at((x, y)).b
+            pxarray[x, y] = (Red,255 - Green, Blue)
 
 def bluebell(window):
-    for Y in xrange(Height):
-        for X in xrange(Width):
-            Red = window.get_at((X, Y)).r
-            Green = window.get_at((X, Y)).g
-            Blue = window.get_at((X, Y)).b
-            pxarray[X, Y] = (Red, Green, 255 - Blue)
+    for y in xrange(HEIGHT):
+        for x in xrange(WIDTH):
+            Red = window.get_at((x, y)).r
+            Green = window.get_at((x, y)).g
+            Blue = window.get_at((x, y)).b
+            pxarray[x, y] = (Red, Green, 255 - Blue)
+
+#def memepics(window):
+
+
 
 while True:
 
@@ -96,10 +100,12 @@ while True:
             nightvision(window)
         if event.type == KEYDOWN and event.key == K_f:
             ganggreen(window)
-        if event.type == KEYDOWN and event.key == K_b:
+        if event.type == KEYDOWN and event.key == K_d:
             bluebell(window)
+        if event.type == KEYDOWN and event.key == K_l:
+            memepics(window)
 
-    del pxarray #Deletes PixelArray so that the text is not affected
+    del pxarray #Deletes PixelArray so that the text is not affected by the colour doesn't change
 
     label = myfont.render(textlistRan, 18, (255, 255, 255))  # Defines Top Text
     text_rect = label.get_rect(center=(WIDTH / 2, 50))  # Automatically Centers Text
