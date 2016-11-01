@@ -78,14 +78,6 @@ def bluebell(window):
             Blue = window.get_at((X, Y)).b
             pxarray[X, Y] = (Red, Green, 255 - Blue)
 
-def hhh(window):
-    for Y in xrange(Height):
-        for X in xrange(Width):
-            Red = window.get_at((X, Y)).r
-            Green = window.get_at((X, Y)).g
-            Blue = window.get_at((X, Y)).b
-            pxarray[X, Y] = (Red, Green, 255 - Blue)
-
 while True:
 
     pxarray = pygame.PixelArray(window)  # Creates a pixel array on the existing image
