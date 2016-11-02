@@ -102,8 +102,10 @@ while True:
             ganggreen(window)
         if event.type == KEYDOWN and event.key == K_d:
             bluebell(window)
-        if event.type == KEYDOWN and event.key == K_l:
-            memepics(window)
+        #if event.type == KEYDOWN and event.key == K_SPACE:
+            del pxarray
+            window.blit(window, (0, 0))
+
 
     del pxarray #Deletes PixelArray so that the text is not affected by the colour doesn't change
 
