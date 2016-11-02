@@ -2,17 +2,18 @@ import pygame, sys, time, math, random
 from pygame.locals import *
 
 pygame.init()  #  Initiates Pygame
-img1 = pygame.image.load('BigSmoke.jpg')  #Imports BigSmoke
-img2 = pygame.image.load('Harambe.jpg')   #Imports Harambe
-img3 = pygame.image.load('Doge.jpg')      #Imports Doge
-img4 = pygame.image.load('YeaBoi.jpg')    #Imports Boi
-img5 = pygame.image.load('Dio.jpg')       #Imports Dio
-img6 = pygame.image.load('Jaguars.jpg')   #Imports Jaguars
+img1 = pygame.image.load('BigSmoke.jpg')
+img2 = pygame.image.load('Harambe.jpg')
+img3 = pygame.image.load('Doge.jpg')
+img4 = pygame.image.load('YeaBoi.jpg')
+img5 = pygame.image.load('Dio.jpg')
+img6 = pygame.image.load('Jaguars.jpg')
+img7 = pygame.image.load('Issac.jpg')
 myfont = pygame.font.SysFont("comic", 100) #Imports text font
 HEIGHT =800 #Sets dimensions of window
 WIDTH =800
 
-imagelist = [img1, img2, img3, img4,img5, img6] #Picks random from loaded images
+imagelist = [img1, img2, img3, img4,img5, img6, img7] #Picks random from loaded images
 imagelistRan = (random.choice(imagelist))
 
 window = pygame.display.set_mode((WIDTH, HEIGHT)) #Creates window
@@ -78,8 +79,6 @@ def bluebell(window):
             Blue = window.get_at((x, y)).b
             pxarray[x, y] = (Red, Green, 255 - Blue)
 
-#def memepics(window):
-
 
 
 while True:
@@ -102,9 +101,7 @@ while True:
             ganggreen(window)
         if event.type == KEYDOWN and event.key == K_d:
             bluebell(window)
-        #if event.type == KEYDOWN and event.key == K_SPACE:
-            del pxarray
-            window.blit(window, (0, 0))
+        
 
 
     del pxarray #Deletes PixelArray so that the text is not affected by the colour doesn't change
