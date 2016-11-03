@@ -101,7 +101,6 @@ while True:
             ganggreen(window)
         if event.type == KEYDOWN and event.key == K_d:
             bluebell(window)
-        
 
 
     del pxarray #Deletes PixelArray so that the text is not affected by the colour doesn't change
