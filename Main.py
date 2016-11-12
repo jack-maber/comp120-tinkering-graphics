@@ -6,18 +6,18 @@ import random
 from pygame.locals import *
 
 pygame.init()  #  Initiates Pygame
-img1 = pygame.image.load('BigSmoke.jpg')
-img2 = pygame.image.load('Harambe.jpg')
-img3 = pygame.image.load('Doge.jpg')
-img4 = pygame.image.load('YeaBoi.jpg')
-img5 = pygame.image.load('Dio.jpg')
-img6 = pygame.image.load('Jaguars.jpg')
-img7 = pygame.image.load('Issac.jpg')
+Bigsmokeimg = pygame.image.load('BigSmoke.jpg')
+Harambeimg = pygame.image.load('Harambe.jpg')
+Dogeimg = pygame.image.load('Doge.jpg')
+Yeaboiimg = pygame.image.load('YeaBoi.jpg')
+Dioimg = pygame.image.load('Dio.jpg')
+Jaguarsimg = pygame.image.load('Jaguars.jpg')
+Issacimg = pygame.image.load('Issac.jpg')
 myfont = pygame.font.SysFont("comic", 100) #Imports text font
 HEIGHT =800 #Sets dimensions of window
 WIDTH =800
 
-imagelist = [img1, img2, img3, img4,img5, img6, img7] #Picks random from loaded images
+imagelist = [Bigsmokeimg, Harambeimg, Dogeimg, Yeaboiimg, Dioimg, Jaguarsimg, Issacimg] #Picks random from loaded images
 imagelistRan = (random.choice(imagelist))
 
 window = pygame.display.set_mode((WIDTH, HEIGHT)) #Creates window
