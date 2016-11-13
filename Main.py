@@ -20,11 +20,11 @@ image_listRan = (random.choice(image_list))
 
 window = pygame.display.set_mode((WIDTH, HEIGHT))   #  Creates window
 pygame.display.set_caption('Meme Generator 3000')   #  Sets caption for game window
-window.blit(image_listRan,(0, 0))                    #  Blits image to created window
+window.blit(image_listRan,(0, 0))                   #  Blits image to created window
 
-textlist = ["CJ?","Are you OK?","Excuse me Young Man!","WHEN YOU MEME"]
+textlist = ["CJ?","Are you OK?","Excuse me Young Man!","WHEN YOU MEME"] #List of possible top text
 textlist1 = ["Ohhhhhhhhhh","Big Smoke, It's me!","Boiiiiiiiiiiiiiiiiiiiiiiiii","It was me, Dio!","JAGUARS","BOTTOM TEXT"]#Picks random text snippet from list
-textlistRan = (random.choice(textlist))
+textlistRan = (random.choice(textlist))             #  Randomely picks text snippet
 textlistRan1 =(random.choice(textlist1))
 
 def greyscale():
@@ -41,45 +41,45 @@ def greyscale():
 def redblack():
     for y in xrange(HEIGHT):
         for x in xrange(WIDTH):
-            Red = window.get_at((x, y)).r
-            Green = window.get_at((x, y)).g
-            Blue = window.get_at((x, y)).b
+            red = window.get_at((x, y)).r
+            green = window.get_at((x, y)).g
+            blue = window.get_at((x, y)).b
 
-            spook = (Red + Green + Blue)/4
-            if Red > 25 and Green > 25 and Blue > 25:
+            spook = (red + green + blue)/4
+            if red > 25 and green > 25 and blue > 25:
                 px_array[x, y] = (255, spook, spook)
 
 def invert(window):
     for y in xrange(HEIGHT):
         for x in xrange(WIDTH):
-            Red = window.get_at((x, y)).r
-            Green = window.get_at((x, y)).g
-            Blue = window.get_at((x, y)).b
-            px_array[x, y] = (255 - Red, 255 - Green, 255 - Blue)
+            red = window.get_at((x, y)).r
+            green = window.get_at((x, y)).g
+            blue = window.get_at((x, y)).b
+            px_array[x, y] = (255 - red, 255 - green, 255 - blue)
 
 def nightvision(window):
     for y in xrange(HEIGHT):
         for x in xrange(WIDTH):
-            Red = window.get_at((x, y)).r
-            Green = window.get_at((x, y)).g
-            Blue = window.get_at((x, y)).b
-            px_array[x, y] = (255 - Red, Green, 255 - Blue)
+            red = window.get_at((x, y)).r
+            green = window.get_at((x, y)).g
+            blue = window.get_at((x, y)).b
+            px_array[x, y] = (255 - red, green, 255 - blue)
 
 def ganggreen(window):
     for y in xrange(HEIGHT):
         for x in xrange(WIDTH):
-            Red = window.get_at((x, y)).r
-            Green = window.get_at((x, y)).g
-            Blue = window.get_at((x, y)).b
-            px_array[x, y] = (Red,255 - Green, Blue)
+            red = window.get_at((x, y)).r
+            green = window.get_at((x, y)).g
+            blue = window.get_at((x, y)).b
+            px_array[x, y] = (red,255 - green, blue)
 
 def bluebell(window):
     for y in xrange(HEIGHT):
         for x in xrange(WIDTH):
-            Red = window.get_at((x, y)).r
-            Green = window.get_at((x, y)).g
-            Blue = window.get_at((x, y)).b
-            px_array[x, y] = (Red, Green, 255 - Blue)
+            red = window.get_at((x, y)).r
+            green = window.get_at((x, y)).g
+            blue = window.get_at((x, y)).b
+            px_array[x, y] = (red, green, 255 - blue)
 
 
 
@@ -91,17 +91,17 @@ while True:
         if event.type == QUIT:
             pygame.quit()
             sys.exit()
-        if event.type == KEYDOWN and event.key == K_g:
+        if event.type == KEYDOWN and event.key == K_1:   # When a key is pressed the function is called
             greyscale()
-        if event.type == KEYDOWN and event.key == K_h:
+        if event.type == KEYDOWN and event.key == K_2:
             redblack()
-        if event.type == KEYDOWN and event.key == K_j:
+        if event.type == KEYDOWN and event.key == K_3:
             invert(window)
-        if event.type == KEYDOWN and event.key == K_k:
+        if event.type == KEYDOWN and event.key == K_4:
             nightvision(window)
-        if event.type == KEYDOWN and event.key == K_f:
+        if event.type == KEYDOWN and event.key == K_5:
             ganggreen(window)
-        if event.type == KEYDOWN and event.key == K_d:
+        if event.type == KEYDOWN and event.key == K_6:
             bluebell(window)
 
 
